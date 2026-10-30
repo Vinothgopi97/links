@@ -6,30 +6,40 @@
     <title>My Links</title>
     <style>
       :root {
-        --bg: #f4f7fb;
-        --panel: #ffffff;
-        --primary: #2563eb;
-        --primary-dark: #1d4ed8;
+        --bg-1: #f5d0fe;
+        --bg-2: #c7d2fe;
+        --bg-3: #a7f3d0;
+        --panel: rgba(255, 255, 255, 0.82);
+        --panel-strong: rgba(255, 255, 255, 0.95);
+        --primary: #7c3aed;
+        --primary-dark: #5b21b6;
         --text: #1f2937;
-        --muted: #6b7280;
-        --border: #e5e7eb;
-        --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        --muted: #4b5563;
+        --border: rgba(255, 255, 255, 0.5);
+        --shadow: 0 24px 60px rgba(76, 29, 149, 0.18);
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(135deg, #eef4ff 0%, var(--bg) 100%);
+        background:
+          radial-gradient(circle at top left, rgba(255,255,255,0.8), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(255,255,255,0.6), transparent 35%),
+          linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-3) 100%);
         color: var(--text);
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 32px 16px;
+        padding: 24px 16px;
       }
 
       .container {
@@ -40,20 +50,24 @@
       .card {
         background: var(--panel);
         border: 1px solid var(--border);
-        border-radius: 20px;
+        border-radius: 24px;
         box-shadow: var(--shadow);
-        padding: 32px;
+        padding: 28px 24px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
       }
 
       h1 {
         margin: 0 0 10px;
-        font-size: clamp(2rem, 3vw, 2.8rem);
+        font-size: clamp(2rem, 5vw, 3rem);
+        line-height: 1.1;
       }
 
       .subtitle {
         margin: 0 0 24px;
         color: var(--muted);
         font-size: 1rem;
+        line-height: 1.5;
       }
 
       .links {
@@ -68,28 +82,62 @@
         display: block;
         text-decoration: none;
         color: var(--text);
-        background: #f8fafc;
-        border: 1px solid var(--border);
-        border-radius: 12px;
+        background: var(--panel-strong);
+        border: 1px solid rgba(124, 58, 237, 0.1);
+        border-radius: 16px;
         padding: 16px 18px;
         transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        box-shadow: 0 8px 22px rgba(76, 29, 149, 0.06);
       }
 
-      .links a:hover {
-        transform: translateY(-1px);
-        border-color: #c7d2fe;
-        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+      .links a:hover,
+      .links a:focus-visible {
+        transform: translateY(-2px);
+        border-color: rgba(124, 58, 237, 0.35);
+        box-shadow: 0 14px 30px rgba(76, 29, 149, 0.12);
+        outline: none;
       }
 
       .link-title {
         display: block;
         font-weight: 700;
-        margin-bottom: 4px;
+        margin-bottom: 6px;
+        font-size: 1rem;
       }
 
       .link-url {
         color: var(--primary);
-        font-size: 0.92rem;
+        font-size: 0.9rem;
+        word-break: break-word;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 18px 12px;
+        }
+
+        .card {
+          padding: 20px 16px;
+          border-radius: 18px;
+        }
+
+        .subtitle {
+          font-size: 0.92rem;
+          margin-bottom: 18px;
+        }
+
+        .links a {
+          padding: 14px 12px;
+        }
+
+        .link-title {
+          font-size: 0.96rem;
+        }
+
+        .link-url {
+          font-size: 0.8rem;
+        }
       }
     </style>
   </head>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Links</title>
+    <style>
+      :root {
+        --bg: #f4f7fb;
+        --panel: #ffffff;
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #eef4ff 0%, var(--bg) 100%);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 32px 16px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 760px;
+      }
+
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        padding: 32px;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: clamp(2rem, 3vw, 2.8rem);
+      }
+
+      .subtitle {
+        margin: 0 0 24px;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .links a {
+        display: block;
+        text-decoration: none;
+        color: var(--text);
+        background: #f8fafc;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px 18px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      }
+
+      .links a:hover {
+        transform: translateY(-1px);
+        border-color: #c7d2fe;
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+      }
+
+      .link-title {
+        display: block;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+
+      .link-url {
+        color: var(--primary);
+        font-size: 0.92rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1>My Links</h1>
+        <p class="subtitle">Useful resources and projects in one place.</p>
+
+        <ul class="links">
+          <li>
+            <a href="https://youtube.com/playlist?list=PLUb2H6JIsa_E&si=JsRAIN6W7cG74X3_" target="_blank" rel="noopener noreferrer">
+              <span class="link-title">Engagement and Wedding Videos</span>
+              <span class="link-url">https://youtube.com/playlist?list=PLUb2H6JIsa_E&si=JsRAIN6W7cG74X3_</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://photos.app.goo.gl/SyEnaMRG6R2RYrKc7" target="_blank" rel="noopener noreferrer">
+              <span class="link-title">Engagement Photos</span>
+              <span class="link-url">https://photos.app.goo.gl/SyEnaMRG6R2RYrKc7</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://photos.app.goo.gl/37ziWACGDJTaSadC6" target="_blank" rel="noopener noreferrer">
+              <span class="link-title">Wedding Photos</span>
+              <span class="link-url">https://photos.app.goo.gl/37ziWACGDJTaSadC6</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
